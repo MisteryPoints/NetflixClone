@@ -2,6 +2,7 @@ import useCurrentUser from '@/hooks/useCurrentUser'
 import { NextPageContext } from 'next'
 import { getSession, signOut } from 'next-auth/react'
 import Image from 'next/image'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 
  export async function getServerSideProps(context: NextPageContext){
@@ -27,6 +28,10 @@ import { useRouter } from 'next/router'
 
     return (
         <div className='flex items-center h-full justify-center'>
+            
+            <Head>
+                <title>DevPoint Netflix | Profiles</title>
+            </Head>
             <div className='flex flex-col'>
                 <h1 className='text-3xl md:text-6xl text-gray-100 text-center'>Who is watching?</h1>
                 <div className='flex items-center justfy-center gap-8 mt-10 w-full'>
